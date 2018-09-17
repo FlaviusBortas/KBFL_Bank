@@ -46,6 +46,7 @@
                                 <rect key="frame" x="16" y="141" width="65" height="30"/>
                                 <state key="normal" title="Checking"/>
                                 <connections>
+                                    <action selector="checkingInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mII-vN-1KI"/>
                                     <segue destination="Up7-iH-df2" kind="show" identifier="SegueToChecking" id="vVl-0u-1eK"/>
                                 </connections>
                             </button>
@@ -53,6 +54,7 @@
                                 <rect key="frame" x="21" y="229" width="54" height="30"/>
                                 <state key="normal" title="Savings"/>
                                 <connections>
+                                    <action selector="savingsInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yB-Ht-qn0"/>
                                     <segue destination="3Uv-yR-ISX" kind="show" identifier="SegueToSavings" id="bZz-Pd-owC"/>
                                 </connections>
                             </button>
@@ -88,6 +90,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="checkingAccountBalance" destination="XJ9-HQ-aH8" id="i7n-Wa-4hi"/>
+                        <outlet property="savingsAccountBalance" destination="ueS-lN-xEX" id="36A-QL-jqN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -246,6 +252,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dlL-hQ-3U0"/>
                     </view>
+                    <connections>
+                        <outlet property="depositAmount" destination="HoU-5S-bWG" id="1tQ-2I-D7U"/>
+                        <outlet property="withdrawAmount" destination="Qv7-vf-QGX" id="IcN-vU-u3f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZt-7r-dyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

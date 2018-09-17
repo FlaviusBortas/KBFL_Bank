@@ -10,6 +10,16 @@ import UIKit
 
 class SavingsViewController: UIViewController {
 
+    
+    //MARK: - Outlets
+    
+    @IBOutlet weak var withdrawAmount: UITextField!
+    
+    @IBOutlet weak var depositAmount: UITextField!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

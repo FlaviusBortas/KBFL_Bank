@@ -10,16 +10,28 @@ import UIKit
 
 class TitleViewController: UIViewController {
 
+    //MARK: - Outlets
+    
+    
+    @IBOutlet weak var checkingAccountBalance: UILabel!
+    
+    @IBOutlet weak var savingsAccountBalance: UILabel!
+    
+    //MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //MARK: - Actions
+    
+    @IBAction func checkingInfoButton(_ sender: UIButton) {
     }
-
+    
+    @IBAction func savingsInfoButton(_ sender: UIButton) {
+    }
+    
 
 }
 
