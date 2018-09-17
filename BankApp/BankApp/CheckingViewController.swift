@@ -10,6 +10,13 @@ import UIKit
 
 class CheckingViewController: UIViewController {
 
+    
+    @IBOutlet weak var withdrawAmount: UITextField!
+    
+    @IBOutlet weak var depositAmount: UITextField!
+    
+    @IBOutlet weak var checkingBalance: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

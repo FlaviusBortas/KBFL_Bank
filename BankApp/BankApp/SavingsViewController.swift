@@ -17,6 +17,7 @@ class SavingsViewController: UIViewController {
     
     @IBOutlet weak var depositAmount: UITextField!
     
+    @IBOutlet weak var savingsBalance: UILabel!
     
     
     

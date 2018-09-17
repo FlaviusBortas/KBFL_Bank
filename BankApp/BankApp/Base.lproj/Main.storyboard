@@ -125,12 +125,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOq-iB-bnf">
-                                <rect key="frame" x="101.5" y="100.5" width="257.5" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rZV-CQ-Z8S">
                                 <rect key="frame" x="101" y="224.5" width="258" height="30"/>
                                 <nil key="textColor"/>
@@ -149,6 +143,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOq-iB-bnf">
+                                <rect key="frame" x="101" y="101" width="257.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -173,6 +173,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h5J-KT-YeD"/>
                     </view>
+                    <connections>
+                        <outlet property="checkingBalance" destination="hbr-tx-DWR" id="dg6-vg-6e6"/>
+                        <outlet property="depositAmount" destination="rZV-CQ-Z8S" id="KeA-5g-oQx"/>
+                        <outlet property="withdrawAmount" destination="yOq-iB-bnf" id="RZ0-b9-YT1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CI6-zW-F0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,6 +259,7 @@
                     </view>
                     <connections>
                         <outlet property="depositAmount" destination="HoU-5S-bWG" id="1tQ-2I-D7U"/>
+                        <outlet property="savingsBalance" destination="nj4-UO-LrB" id="U4r-LG-h8Q"/>
                         <outlet property="withdrawAmount" destination="Qv7-vf-QGX" id="IcN-vU-u3f"/>
                     </connections>
                 </viewController>
