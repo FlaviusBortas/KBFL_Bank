@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		06512611214FF488007B9F1B /* AccountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06512610214FF488007B9F1B /* AccountProtocol.swift */; };
 		8BB59F21214FE2FC00391C3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB59F20214FE2FC00391C3D /* AppDelegate.swift */; };
-		8BB59F23214FE2FC00391C3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB59F22214FE2FC00391C3D /* ViewController.swift */; };
+		8BB59F23214FE2FC00391C3D /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB59F22214FE2FC00391C3D /* TitleViewController.swift */; };
 		8BB59F26214FE2FC00391C3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB59F24214FE2FC00391C3D /* Main.storyboard */; };
 		8BB59F28214FE2FE00391C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB59F27214FE2FE00391C3D /* Assets.xcassets */; };
 		8BB59F2B214FE2FE00391C3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB59F29214FE2FE00391C3D /* LaunchScreen.storyboard */; };
 		8BB59F36214FE2FF00391C3D /* BankAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB59F35214FE2FF00391C3D /* BankAppTests.swift */; };
 		8BB59F41214FE2FF00391C3D /* BankAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB59F40214FE2FF00391C3D /* BankAppUITests.swift */; };
 		8BB59F512150044600391C3D /* Checking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB59F502150044600391C3D /* Checking.swift */; };
+		EB174C4F21501EAF00F44593 /* CheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB174C4E21501EAF00F44593 /* CheckingViewController.swift */; };
+		EB174C5121501EFB00F44593 /* SavingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB174C5021501EFB00F44593 /* SavingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 		06512610214FF488007B9F1B /* AccountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProtocol.swift; sourceTree = "<group>"; };
 		8BB59F1D214FE2FC00391C3D /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB59F20214FE2FC00391C3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BB59F22214FE2FC00391C3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8BB59F22214FE2FC00391C3D /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		8BB59F25214FE2FC00391C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BB59F27214FE2FE00391C3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BB59F2A214FE2FE00391C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		8BB59F40214FE2FF00391C3D /* BankAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAppUITests.swift; sourceTree = "<group>"; };
 		8BB59F42214FE2FF00391C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BB59F502150044600391C3D /* Checking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checking.swift; sourceTree = "<group>"; };
+		EB174C4E21501EAF00F44593 /* CheckingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckingViewController.swift; sourceTree = "<group>"; };
+		EB174C5021501EFB00F44593 /* SavingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +85,6 @@
 		8BB59F14214FE2FC00391C3D = {
 			isa = PBXGroup;
 			children = (
-				8BB59F502150044600391C3D /* Checking.swift */,
 				8BB59F1F214FE2FC00391C3D /* BankApp */,
 				8BB59F34214FE2FE00391C3D /* BankAppTests */,
 				8BB59F3F214FE2FF00391C3D /* BankAppUITests */,
@@ -103,12 +106,12 @@
 			isa = PBXGroup;
 			children = (
 				8BB59F20214FE2FC00391C3D /* AppDelegate.swift */,
-				8BB59F22214FE2FC00391C3D /* ViewController.swift */,
+				EB174C5221501F4300F44593 /* ModelLayer */,
+				EB174C4D21501E5900F44593 /* ViewControllers */,
 				8BB59F24214FE2FC00391C3D /* Main.storyboard */,
 				8BB59F27214FE2FE00391C3D /* Assets.xcassets */,
 				8BB59F29214FE2FE00391C3D /* LaunchScreen.storyboard */,
 				8BB59F2C214FE2FE00391C3D /* Info.plist */,
-				06512610214FF488007B9F1B /* AccountProtocol.swift */,
 			);
 			path = BankApp;
 			sourceTree = "<group>";
@@ -129,6 +132,25 @@
 				8BB59F42214FE2FF00391C3D /* Info.plist */,
 			);
 			path = BankAppUITests;
+			sourceTree = "<group>";
+		};
+		EB174C4D21501E5900F44593 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8BB59F22214FE2FC00391C3D /* TitleViewController.swift */,
+				EB174C4E21501EAF00F44593 /* CheckingViewController.swift */,
+				EB174C5021501EFB00F44593 /* SavingsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EB174C5221501F4300F44593 /* ModelLayer */ = {
+			isa = PBXGroup;
+			children = (
+				8BB59F502150044600391C3D /* Checking.swift */,
+				06512610214FF488007B9F1B /* AccountProtocol.swift */,
+			);
+			path = ModelLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BB59F23214FE2FC00391C3D /* ViewController.swift in Sources */,
+				EB174C5121501EFB00F44593 /* SavingsViewController.swift in Sources */,
+				8BB59F23214FE2FC00391C3D /* TitleViewController.swift in Sources */,
 				8BB59F512150044600391C3D /* Checking.swift in Sources */,
 				06512611214FF488007B9F1B /* AccountProtocol.swift in Sources */,
+				EB174C4F21501EAF00F44593 /* CheckingViewController.swift in Sources */,
 				8BB59F21214FE2FC00391C3D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
