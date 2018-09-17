@@ -12,13 +12,11 @@ class Checking {
     var checkingBalance: Double
     var checkingWithdrawal: Double
     var checkingDeposit: Double
-    var totalBalance: Double
     
-    init(checkingsBalance: Double, checkingWithdrawal: Double, checkingDeposit: Double, totalBalance:Double) {
+    init(checkingsBalance: Double, checkingWithdrawal: Double, checkingDeposit: Double) {
         self.checkingBalance = checkingsBalance
         self.checkingWithdrawal = checkingWithdrawal
         self.checkingDeposit = checkingDeposit
-        self.totalBalance = totalBalance
     }
 
     
