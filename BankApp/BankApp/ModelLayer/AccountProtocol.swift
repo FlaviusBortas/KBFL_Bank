@@ -13,7 +13,7 @@ protocol Account: class {
     var withdrawal: Double { get set }
     var deposit: Double { get set }
     
-    func totalBalance(_ withdrawal: Double, _ deposit: Double) -> Double
+    func totalBalance(withdraw withdrawal: Double, deposit deposit: Double) -> Double
         // var transaction = deposit - withdrawal
         // return currentBalance + transactionn
    
