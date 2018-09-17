@@ -45,10 +45,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRB-aT-8Rb">
                                 <rect key="frame" x="16" y="141" width="65" height="30"/>
                                 <state key="normal" title="Checking"/>
+                                <connections>
+                                    <segue destination="Up7-iH-df2" kind="show" identifier="SegueToChecking" id="vVl-0u-1eK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qw9-lO-xXn">
                                 <rect key="frame" x="21" y="229" width="54" height="30"/>
                                 <state key="normal" title="Savings"/>
+                                <connections>
+                                    <segue destination="3Uv-yR-ISX" kind="show" identifier="SegueToSavings" id="bZz-Pd-owC"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueS-lN-xEX">
                                 <rect key="frame" x="164" y="200" width="195" height="21"/>
@@ -164,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CI6-zW-F0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.60000000000002" y="133.5832083958021"/>
+            <point key="canvasLocation" x="870" y="490"/>
         </scene>
         <!--SavingsView-->
         <scene sceneID="7sT-Ma-ZyA">
@@ -243,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZt-7r-dyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1557.5999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="950" y="-398"/>
         </scene>
     </scenes>
 </document>
