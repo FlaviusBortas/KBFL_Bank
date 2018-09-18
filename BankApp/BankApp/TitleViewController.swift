@@ -27,6 +27,7 @@ class TitleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         populateBalances()
+        populateLabels()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -38,6 +39,14 @@ class TitleViewController: UIViewController {
         
         currentCheckingBalance = checkingBalance.balance
         currentSavingsBalance = savingsBalance.balance
+    }
+    
+    func populateLabels() {
+        checkingAccountBalance.text = String(currentCheckingBalance)
+        savingsAccountBalance.text = String(currentSavingsBalance)
+        // String(format: "Tip Amount: $%.02f", tipAmount)
+        // String(format: "%0.3f", string)
+
     }
 
     //MARK: - Actions
