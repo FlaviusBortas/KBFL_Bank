@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+protocol CheckingViewControllerDelegate: class {
+    func checkingViewController(_ controller: CheckingViewController, didFinishEditing item: Checking)
+}
+
 class CheckingViewController: UIViewController {
 
     
