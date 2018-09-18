@@ -12,9 +12,7 @@ class TitleViewController: UIViewController {
 
     //MARK: - Outlets
     
-    
     @IBOutlet weak var checkingAccountBalance: UILabel!
-    
     @IBOutlet weak var savingsAccountBalance: UILabel!
     
     //MARK: - Properties
@@ -49,9 +47,35 @@ class TitleViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func checkingInfoButton(_ sender: UIButton) {
+
     }
     
     @IBAction func savingsInfoButton(_ sender: UIButton) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "SegueToSavings":
+            guard let savingsVC = segue.destination as? SavingsViewController else {
+                print("Failed to cast segue destination as SavingsVC")
+                return
+            }
+            
+            savingsVC.currentBalance = currentSavingsBalance
+            print("made it to savings")
+            
+        case "SegueToChecking":
+            guard let checkingVC = segue.destination as? CheckingViewController else {
+                print("Failed to cast segue destination as CheckingVC")
+                return
+            }
+            
+            checkingVC.currentBalance = currentCheckingBalance
+            print("made it to checkings")
+            
+        default:
+            return
+        }
     }
     
 

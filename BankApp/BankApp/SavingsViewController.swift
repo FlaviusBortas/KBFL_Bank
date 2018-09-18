@@ -30,12 +30,16 @@ class SavingsViewController: UIViewController {
     
     var savingsData: Savings?
     weak var delegate: SavingsViewControllerDelegate?
+    var currentBalance: Double?
     
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadBalance()
+        
+   
 
         // Do any additional setup after loading the view.
     }
@@ -55,5 +59,13 @@ class SavingsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func loadBalance() {
+        guard let balance = currentBalance else {
+            print("Couldnt find current balance")
+            return
+        }
+        savingsBalance.text = String(format: "%0.02f", balance)
+    }
 
 }

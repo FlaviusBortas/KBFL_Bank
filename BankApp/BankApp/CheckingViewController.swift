@@ -28,12 +28,15 @@ class CheckingViewController: UIViewController {
     
     var checkingData: Checking?
     weak var delegate: CheckingViewControllerDelegate?
+    var currentBalance: Double?
+
     
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadBalance()
 
         // Do any additional setup after loading the view.
     }
@@ -54,4 +57,14 @@ class CheckingViewController: UIViewController {
     }
     */
 
+    
+    func loadBalance() {
+        guard let balance = currentBalance else {
+            print("Couldnt find current balance")
+            return
+        }
+        checkingBalance.text = String(format: "%0.02f", balance)
+    }
+    
+    
 }
