@@ -17,11 +17,27 @@ class TitleViewController: UIViewController {
     
     @IBOutlet weak var savingsAccountBalance: UILabel!
     
+    //MARK: - Properties
+    
+    var currentCheckingBalance = 0.00
+    var currentSavingsBalance = 0.00
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateBalances()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    //MARK: - Private Implementations
+    
+    func populateBalances() {
+        let checkingBalance = CheckingBalance()
+        let savingsBalance = SavingsBalance()
+        
+        currentCheckingBalance = checkingBalance.balance
+        currentSavingsBalance = savingsBalance.balance
     }
 
     //MARK: - Actions
