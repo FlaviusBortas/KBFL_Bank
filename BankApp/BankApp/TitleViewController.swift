@@ -42,11 +42,8 @@ class TitleViewController: UIViewController {
     }
     
     func populateLabels() {
-        checkingAccountBalance.text = String(currentCheckingBalance)
-        savingsAccountBalance.text = String(currentSavingsBalance)
-        // String(format: "Tip Amount: $%.02f", tipAmount)
-        // String(format: "%0.3f", string)
-
+        checkingAccountBalance.text = String(format: "%0.02f", currentCheckingBalance)
+        savingsAccountBalance.text = String(format: "%0.02f", currentSavingsBalance)
     }
 
     //MARK: - Actions
