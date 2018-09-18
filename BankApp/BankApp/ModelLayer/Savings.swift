@@ -47,7 +47,7 @@ extension Savings: Account {
         }
     }
     
-    func totalBalance(withdraw withdrawal: Double, depositing deposit: Double) -> Double {
+    func totalBalance(withdrawing withdrawal: Double, depositing deposit: Double) -> Double {
         let transaction = deposit - withdrawal
         return currentBalance + transaction
     }
