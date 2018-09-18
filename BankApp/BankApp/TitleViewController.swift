@@ -56,9 +56,23 @@ class TitleViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "SegueToSavings":
+            guard let savingsVC = segue.destination as? SavingsViewController else {
+                print("Failed to cast segue destination as SavingsVC")
+                return
+            }
+            
+            savingsVC.currentBalance = currentSavingsBalance
             print("made it to savings")
-        case "SegueToCheckings":
+            
+        case "SegueToChecking":
+            guard let checkingVC = segue.destination as? CheckingViewController else {
+                print("Failed to cast segue destination as CheckingVC")
+                return
+            }
+            
+            checkingVC.currentBalance = currentCheckingBalance
             print("made it to checkings")
+            
         default:
             return
         }
