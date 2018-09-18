@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+//MARK: - Protocol Definition
 
 protocol SavingsViewControllerDelegate: class {
     func savingsViewController(_ controller: SavingsViewController, didFinishEditing item: Savings)
@@ -26,6 +26,13 @@ class SavingsViewController: UIViewController {
     @IBOutlet weak var savingsBalance: UILabel!
     
     
+    //MARK: - Properties
+    
+    var savingsData: Savings?
+    weak var delegate: SavingsViewControllerDelegate?
+    
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

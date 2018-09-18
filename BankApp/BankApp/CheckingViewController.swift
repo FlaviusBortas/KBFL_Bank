@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK: - Protocol Definition
 
 protocol CheckingViewControllerDelegate: class {
     func checkingViewController(_ controller: CheckingViewController, didFinishEditing item: Checking)
@@ -21,6 +22,15 @@ class CheckingViewController: UIViewController {
     @IBOutlet weak var depositAmount: UITextField!
     
     @IBOutlet weak var checkingBalance: UILabel!
+    
+    
+    //MARK: - Properties
+    
+    var checkingData: Checking?
+    weak var delegate: CheckingViewControllerDelegate?
+    
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
