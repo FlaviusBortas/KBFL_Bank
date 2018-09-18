@@ -8,6 +8,12 @@
 
 import UIKit
 
+
+
+protocol SavingsViewControllerDelegate: class {
+    func savingsViewController(_ controller: SavingsViewController, didFinishEditing item: Savings)
+}
+
 class SavingsViewController: UIViewController {
 
     
