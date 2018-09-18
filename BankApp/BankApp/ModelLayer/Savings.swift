@@ -54,3 +54,7 @@ extension Savings: Account {
     
     
 }
+
+struct SavingsBalance {
+    var balance = 200.00
+}
