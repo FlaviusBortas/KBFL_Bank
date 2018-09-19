@@ -102,11 +102,17 @@ class CheckingViewController: UIViewController {
         }
     }
     
+    func updateCheckingBalanceStruct() {
+        let checkingBalance = CheckingBalance()
+        checkingBalance.balance = checkingData!.checkingBalance
+    }
     
     //MARK: - Actions
     
     @IBAction func updateBalanceButton(_ sender: UIButton) {
         updateCheckingAccount()
+        delegate?.checkingViewController(self, didFinishEditing: checkingData!)
+        updateCheckingBalanceStruct()
     }
     
     

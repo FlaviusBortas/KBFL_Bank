@@ -61,6 +61,7 @@ class TitleViewController: UIViewController {
             }
             
             savingsVC.currentBalance = currentSavingsBalance
+            savingsVC.delegate = self
             print("made it to savings")
             
         case "SegueToChecking":
@@ -70,6 +71,7 @@ class TitleViewController: UIViewController {
             }
             
             checkingVC.currentBalance = currentCheckingBalance
+            checkingVC.delegate = self
             print("made it to checkings")
             
         default:
@@ -78,5 +80,18 @@ class TitleViewController: UIViewController {
     }
     
 
+}
+
+extension TitleViewController: SavingsViewControllerDelegate {
+    func savingsViewController(_ controller: SavingsViewController, didFinishEditing item: Savings) {
+        savingsAccountBalance.text = String(item.savingsBalance)
+    }
+}
+
+
+extension TitleViewController: CheckingViewControllerDelegate {
+    func checkingViewController(_ controller: CheckingViewController, didFinishEditing item: Checking) {
+        checkingAccountBalance.text = String(item.checkingBalance)
+    }
 }
 
