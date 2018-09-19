@@ -37,6 +37,7 @@ class CheckingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBalance()
+        loadCheckingAccount()
 
         // Do any additional setup after loading the view.
     }
@@ -47,18 +48,9 @@ class CheckingViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    //MARK: - Private Implementations
     
-    func loadBalance() {
+    private func loadBalance() {
         guard let balance = currentBalance else {
             print("Couldnt find current balance")
             return
@@ -66,15 +58,15 @@ class CheckingViewController: UIViewController {
         checkingBalance.text = String(format: "%0.02f", balance)
     }
     
-    func loadCheckingAccount(){
+    private func loadCheckingAccount(){
         guard let currentBalance = self.currentBalance else { return }
         self.checkingData = Checking(checkingsBalance: currentBalance, checkingWithdrawal: 0.0, checkingDeposit: 0.0)
     }
     
     
-    func updateCheckingAccount() {
+    private func updateCheckingAccount() {
         checkInput()
-//        guard let currentBalance = self.currentBalance else { return }
+
         guard let withdrawal = withdrawAmount.text else { return }
         guard let withdrawalDouble = Double(withdrawal) else { return }
         guard let deposit = depositAmount.text else { return }
@@ -83,20 +75,25 @@ class CheckingViewController: UIViewController {
         self.checkingData?.checkingWithdrawal = withdrawalDouble
         self.checkingData?.checkingDeposit = depositDouble
         
-//        var updatedBalance = self.checkingData?.totalBalance(withdrawing: withdrawalDouble, depositing: depositDouble)
+        let newBalance = updateBalance(withWithdrawing: withdrawalDouble, withDepositing: depositDouble)
+        
+        updateCheckingBalance(newBalance: newBalance)
+        
+
     }
     
-    func updateBalance(withWithdrawing withdrawal: Double, withDepositing deposit: Double) -> Double{
+    private func updateBalance(withWithdrawing withdrawal: Double, withDepositing deposit: Double) -> Double{
         guard let updatedBalance = self.checkingData?.totalBalance(withdrawing: withdrawal, depositing: deposit) else { return 0.0 }
         
         return updatedBalance
     }
     
-    func updateCheckingBalance(newBalance balance: Double) {
+    private func updateCheckingBalance(newBalance balance: Double) {
         checkingData?.checkingBalance = balance
+        checkingBalance.text = String(format: "%0.02f", balance)
     }
     
-    func checkInput() {
+    private func checkInput() {
         if withdrawAmount.text?.count == 0 {
             withdrawAmount.text = "0.0"
         }
@@ -104,4 +101,13 @@ class CheckingViewController: UIViewController {
             depositAmount.text = "0.0"
         }
     }
+    
+    
+    //MARK: - Actions
+    
+    @IBAction func updateBalanceButton(_ sender: UIButton) {
+        updateCheckingAccount()
+    }
+    
+    
 }
