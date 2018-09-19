@@ -66,21 +66,42 @@ class CheckingViewController: UIViewController {
         checkingBalance.text = String(format: "%0.02f", balance)
     }
     
-    
-    func updateBalance(withWithdrawing withdrawal: Double, withDepositing depositing: Double) -> Double{
-        return 0.0
+    func loadCheckingAccount(){
+        guard let currentBalance = self.currentBalance else { return }
+        self.checkingData = Checking(checkingsBalance: currentBalance, checkingWithdrawal: 0.0, checkingDeposit: 0.0)
     }
     
-    func loadCheckingAccount(checkingAccount account: Checking?) {
-        guard let currentBalance = self.currentBalance else { return }
+    
+    func updateCheckingAccount() {
+        checkInput()
+//        guard let currentBalance = self.currentBalance else { return }
         guard let withdrawal = withdrawAmount.text else { return }
         guard let withdrawalDouble = Double(withdrawal) else { return }
         guard let deposit = depositAmount.text else { return }
         guard let depositDouble = Double(deposit) else { return }
         
-        self.checkingData = Checking(checkingsBalance: currentBalance, checkingWithdrawal: withdrawalDouble, checkingDeposit: depositDouble)
+        self.checkingData?.checkingWithdrawal = withdrawalDouble
+        self.checkingData?.checkingDeposit = depositDouble
         
-        var updatedBalance = self.checkingData?.totalBalance(withdrawing: withdrawalDouble, depositing: depositDouble)
+//        var updatedBalance = self.checkingData?.totalBalance(withdrawing: withdrawalDouble, depositing: depositDouble)
     }
     
+    func updateBalance(withWithdrawing withdrawal: Double, withDepositing deposit: Double) -> Double{
+        guard let updatedBalance = self.checkingData?.totalBalance(withdrawing: withdrawal, depositing: deposit) else { return 0.0 }
+        
+        return updatedBalance
+    }
+    
+    func updateCheckingBalance(newBalance balance: Double) {
+        checkingData?.checkingBalance = balance
+    }
+    
+    func checkInput() {
+        if withdrawAmount.text?.count == 0 {
+            withdrawAmount.text = "0.0"
+        }
+        if depositAmount.text?.count == 0 {
+            depositAmount.text = "0.0"
+        }
+    }
 }
