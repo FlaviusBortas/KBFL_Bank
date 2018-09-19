@@ -38,7 +38,7 @@ class SavingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBalance()
-        
+        loadSavingsAccount()
    
 
         // Do any additional setup after loading the view.
@@ -49,23 +49,67 @@ class SavingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    //MARK: - Private Implementations
     
-    func loadBalance() {
+    private func loadBalance() {
         guard let balance = currentBalance else {
             print("Couldnt find current balance")
             return
         }
         savingsBalance.text = String(format: "%0.02f", balance)
     }
+    
+    private func loadSavingsAccount(){
+        guard let currentBalance = self.currentBalance else { return }
+        self.savingsData = Savings(savingsBalance: currentBalance, savingsWithdrawal: 0.0, savingsDeposit: 0.0)
+    }
+    
+    
+    private func updateSavingsAccount() {
+        checkInput()
+        
+        guard let withdrawal = withdrawAmount.text else { return }
+        guard let withdrawalDouble = Double(withdrawal) else { return }
+        guard let deposit = depositAmount.text else { return }
+        guard let depositDouble = Double(deposit) else { return }
+        
+        self.savingsData?.savingsWithdrawal = withdrawalDouble
+        self.savingsData?.savingsDeposit = depositDouble
+        
+        let newBalance = updateBalance(withWithdrawing: withdrawalDouble, withDepositing: depositDouble)
+        
+        updateSavingsBalance(newBalance: newBalance)
+        
+        
+    }
+    
+    private func updateBalance(withWithdrawing withdrawal: Double, withDepositing deposit: Double) -> Double{
+        guard let updatedBalance = self.savingsData?.totalBalance(withdrawing: withdrawal, depositing: deposit) else { return 0.0 }
+        
+        return updatedBalance
+    }
+    
+    private func updateSavingsBalance(newBalance balance: Double) {
+        savingsData?.savingsBalance = balance
+        savingsBalance.text = String(format: "%0.02f", balance)
+    }
+    
+    private func checkInput() {
+        if withdrawAmount.text?.count == 0 {
+            withdrawAmount.text = "0.0"
+        }
+        if depositAmount.text?.count == 0 {
+            depositAmount.text = "0.0"
+        }
+    }
+    
+    
+    //MARK: - Actions
+    
+    @IBAction func updateBalanceButton(_ sender: UIButton) {
+        updateSavingsAccount()
+    }
+    
+    
 
 }
