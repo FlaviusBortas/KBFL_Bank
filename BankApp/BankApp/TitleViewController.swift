@@ -26,7 +26,11 @@ class TitleViewController: UIViewController {
         super.viewDidLoad()
         populateBalances()
         populateLabels()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        populateBalances()
+        populateLabels()
     }
     
     //MARK: - Private Implementations
@@ -45,11 +49,10 @@ class TitleViewController: UIViewController {
     }
 
     //MARK: - Actions
-    
-    @IBAction func checkingInfoButton(_ sender: UIButton) {
 
+    @IBAction func checkingInfoButton(_ sender: UIButton) {
     }
-    
+
     @IBAction func savingsInfoButton(_ sender: UIButton) {
     }
     
@@ -62,6 +65,7 @@ class TitleViewController: UIViewController {
             }
             
             savingsVC.currentBalance = currentSavingsBalance
+            savingsVC.delegate = self
             print("made it to savings")
             
         case "SegueToChecking":
@@ -71,13 +75,24 @@ class TitleViewController: UIViewController {
             }
             
             checkingVC.currentBalance = currentCheckingBalance
+            checkingVC.delegate = self
             print("made it to checkings")
             
         default:
             return
         }
     }
-    
-
 }
 
+extension TitleViewController: SavingsViewControllerDelegate {
+    func savingsViewController(_ controller: SavingsViewController, didFinishEditing item: Savings) {
+        currentSavingsBalance = item.currentBalance
+    }
+}
+
+
+extension TitleViewController: CheckingViewControllerDelegate {
+    func checkingViewController(_ controller: CheckingViewController, didFinishEditing item: Checking) {
+        currentCheckingBalance = item.currentBalance
+    }
+}
