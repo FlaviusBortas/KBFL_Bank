@@ -17,35 +17,35 @@ class TitleViewController: UIViewController {
     
     //MARK: - Properties
     
-    var currentCheckingBalance = 0.00
-    var currentSavingsBalance = 0.00
+    var checkingAccount = Checking(balance: 1000)
+    var savingsAccount = Savings(balance: 2000)
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        populateBalances()
+//        populateBalances()
         populateLabels()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        populateBalances()
+//        populateBalances()
         populateLabels()
     }
     
     //MARK: - Private Implementations
     
-    func populateBalances() {
-        let checkingBalance = CheckingBalance()
-        let savingsBalance = SavingsBalance()
-        
-        currentCheckingBalance = checkingBalance.balance
-        currentSavingsBalance = savingsBalance.balance
-    }
-    
+//    func populateBalances() {
+//        let checkingBalance = CheckingBalance()
+//        let savingsBalance = SavingsBalance()
+//
+//        currentCheckingBalance = checkingBalance.balance
+//        currentSavingsBalance = savingsBalance.balance
+//    }
+//
     func populateLabels() {
-        checkingAccountBalance.text = String(format: "%0.02f", currentCheckingBalance)
-        savingsAccountBalance.text = String(format: "%0.02f", currentSavingsBalance)
+        checkingAccountBalance.text = String(format: "%0.02f", checkingAccount.balance)
+        savingsAccountBalance.text = String(format: "%0.02f", savingsAccount.balance)
     }
 
     //MARK: - Actions
@@ -64,7 +64,7 @@ class TitleViewController: UIViewController {
                 return
             }
             
-            savingsVC.currentBalance = currentSavingsBalance
+            savingsVC.savingsAmount = savingsAccount
             savingsVC.delegate = self
             print("made it to savings")
             
@@ -74,7 +74,7 @@ class TitleViewController: UIViewController {
                 return
             }
             
-            checkingVC.currentBalance = currentCheckingBalance
+            checkingVC.checkingsAmount = checkingAccount
             checkingVC.delegate = self
             print("made it to checkings")
             
@@ -86,13 +86,11 @@ class TitleViewController: UIViewController {
 
 extension TitleViewController: SavingsViewControllerDelegate {
     func savingsViewController(_ controller: SavingsViewController, didFinishEditing item: Savings) {
-        currentSavingsBalance = item.currentBalance
     }
 }
 
 
 extension TitleViewController: CheckingViewControllerDelegate {
     func checkingViewController(_ controller: CheckingViewController, didFinishEditing item: Checking) {
-        currentCheckingBalance = item.currentBalance
     }
 }

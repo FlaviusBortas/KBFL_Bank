@@ -28,9 +28,9 @@ class SavingsViewController: UIViewController {
     
     //MARK: - Properties
     
-    var savingsData: Savings?
+//    var savingsData: Savings?
     weak var delegate: SavingsViewControllerDelegate?
-    var currentBalance: Double?
+    var savingsAmount: Savings?
     
     
     //MARK: - Lifecycle
@@ -38,7 +38,7 @@ class SavingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadBalance()
-        loadSavingsAccount()
+//        loadSavingsAccount()
    
 
         // Do any additional setup after loading the view.
@@ -52,45 +52,50 @@ class SavingsViewController: UIViewController {
     //MARK: - Private Implementations
     
     private func loadBalance() {
-        guard let balance = currentBalance else {
+        guard let balance = savingsAmount?.balance else {
             print("Couldnt find current balance")
             return
         }
         savingsBalance.text = String(format: "%0.02f", balance)
     }
     
-    private func loadSavingsAccount(){
-        guard let currentBalance = self.currentBalance else { return }
-        self.savingsData = Savings(savingsBalance: currentBalance, savingsWithdrawal: 0.0, savingsDeposit: 0.0)
-    }
+//    private func loadSavingsAccount(){
+//        guard let currentBalance = self.savingsAmount?.balance else { return }
+//        self.savingsData = Savings(savingsBalance: currentBalance, savingsWithdrawal: 0.0, savingsDeposit: 0.0)
+//    }
     
     
     private func updateSavingsAccount() {
-        checkInput()
+//        checkInput()
         
         guard let withdrawal = withdrawAmount.text else { return }
         guard let withdrawalDouble = Double(withdrawal) else { return }
-        guard let deposit = depositAmount.text else { return }
-        guard let depositDouble = Double(deposit) else { return }
         
-        self.savingsData?.savingsWithdrawal = withdrawalDouble
-        self.savingsData?.savingsDeposit = depositDouble
+        guard let withdraw = self.savingsAmount?.withdraw(withdrawAmount: withdrawalDouble) else { return }
+        savingsBalance.text = String(format: "%0.02f", withdraw)
         
-        let newBalance = updateBalance(withWithdrawing: withdrawalDouble, withDepositing: depositDouble)
+        guard let depositValue = depositAmount.text else { return }
+        guard let depositDouble = Double(depositValue) else { return }
         
-        updateSavingsBalance(newBalance: newBalance)
+        
+        guard let deposit = self.savingsAmount?.deposit(depositAmount: depositDouble) else { return }
+        savingsBalance.text = String(format: "%0.02f", deposit)
+        
+//        let newBalance = updateBalance(withWithdrawing: withdrawalDouble, withDepositing: depositDouble)
+//
+//        updateSavingsBalance(newBalance: newBalance)
         
         
     }
     
-    private func updateBalance(withWithdrawing withdrawal: Double, withDepositing deposit: Double) -> Double{
-        guard let updatedBalance = self.savingsData?.totalBalance(withdrawing: withdrawal, depositing: deposit) else { return 0.0 }
-        
-        return updatedBalance
-    }
-    
+//    private func updateBalance(withWithdrawing withdrawal: Double, withDepositing deposit: Double) -> Double{
+//        guard let updatedBalance = self.savingsData?.totalBalance(withdrawing: withdrawal, depositing: deposit) else { return 0.0 }
+//
+//        return updatedBalance
+//    }
+//
     private func updateSavingsBalance(newBalance balance: Double) {
-        savingsData?.savingsBalance = balance
+        savingsAmount?.balance = balance
         savingsBalance.text = String(format: "%0.02f", balance)
     }
     
