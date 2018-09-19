@@ -260,6 +260,9 @@
                                     <constraint firstAttribute="width" constant="130" id="g0S-eJ-qRG"/>
                                 </constraints>
                                 <state key="normal" title="Update Balance"/>
+                                <connections>
+                                    <action selector="updateBalanceButton:" destination="3Uv-yR-ISX" eventType="touchUpInside" id="M6z-2A-O9o"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
