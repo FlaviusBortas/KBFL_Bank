@@ -58,6 +58,6 @@ extension Checking: Account {
     
 }
 
-struct CheckingBalance {
+class CheckingBalance {
     var balance = 100.00
 }

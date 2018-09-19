@@ -108,6 +108,7 @@ class SavingsViewController: UIViewController {
     
     @IBAction func updateBalanceButton(_ sender: UIButton) {
         updateSavingsAccount()
+        delegate?.savingsViewController(self, didFinishEditing: savingsData!)
     }
     
     
