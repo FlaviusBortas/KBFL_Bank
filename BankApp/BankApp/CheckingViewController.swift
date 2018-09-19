@@ -67,4 +67,20 @@ class CheckingViewController: UIViewController {
     }
     
     
+    func updateBalance(withWithdrawing withdrawal: Double, withDepositing depositing: Double) -> Double{
+        return 0.0
+    }
+    
+    func loadCheckingAccount(checkingAccount account: Checking?) {
+        guard let currentBalance = self.currentBalance else { return }
+        guard let withdrawal = withdrawAmount.text else { return }
+        guard let withdrawalDouble = Double(withdrawal) else { return }
+        guard let deposit = depositAmount.text else { return }
+        guard let depositDouble = Double(deposit) else { return }
+        
+        self.checkingData = Checking(checkingsBalance: currentBalance, checkingWithdrawal: withdrawalDouble, checkingDeposit: depositDouble)
+        
+        var updatedBalance = self.checkingData?.totalBalance(withdrawing: withdrawalDouble, depositing: depositDouble)
+    }
+    
 }

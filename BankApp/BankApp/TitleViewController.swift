@@ -47,7 +47,6 @@ class TitleViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func checkingInfoButton(_ sender: UIButton) {
-
     }
     
     @IBAction func savingsInfoButton(_ sender: UIButton) {
