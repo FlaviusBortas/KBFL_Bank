@@ -45,6 +45,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qw9-lO-xXn">
                                 <rect key="frame" x="16" y="273" width="54" height="30"/>
                                 <color key="backgroundColor" red="0.067481808364391327" green="0.96407788991928101" blue="0.018493182957172394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="jlv-Ce-Unl"/>
+                                </constraints>
                                 <state key="normal" title="Savings"/>
                                 <connections>
                                     <action selector="savingsInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yB-Ht-qn0"/>
@@ -60,10 +63,13 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRB-aT-8Rb">
                                 <rect key="frame" x="16" y="185" width="65" height="30"/>
                                 <color key="backgroundColor" red="0.067481808364391327" green="0.96407788991928101" blue="0.018493182957172394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="CIK-kc-VzG"/>
+                                </constraints>
                                 <state key="normal" title="Checking"/>
                                 <connections>
                                     <action selector="checkingInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mII-vN-1KI"/>
-                                    <segue destination="Up7-iH-df2" kind="show" identifier="SegueToChecking" id="vVl-0u-1eK"/>
+                                    <segue destination="Up7-iH-df2" kind="show" identifier="SegueToChecking" id="eKK-RX-wKY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,14 +79,15 @@
                             <constraint firstItem="ueS-lN-xEX" firstAttribute="centerY" secondItem="Pcs-t1-wqr" secondAttribute="centerY" id="69m-eO-daK"/>
                             <constraint firstItem="Qw9-lO-xXn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7Fm-8P-voX"/>
                             <constraint firstItem="iRB-aT-8Rb" firstAttribute="top" secondItem="0PJ-hk-twm" secondAttribute="bottom" constant="8" id="9SO-dh-cf0"/>
+                            <constraint firstItem="Pcs-t1-wqr" firstAttribute="top" secondItem="iRB-aT-8Rb" secondAttribute="bottom" constant="29" id="BM8-bN-RnP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iRB-aT-8Rb" secondAttribute="trailing" constant="294" id="Fvu-8J-kz0"/>
                             <constraint firstItem="ueS-lN-xEX" firstAttribute="leading" secondItem="Pcs-t1-wqr" secondAttribute="trailing" constant="8" id="M7h-Il-JVI"/>
                             <constraint firstItem="fWm-4D-Ivk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PBv-s7-4MR"/>
-                            <constraint firstItem="Pcs-t1-wqr" firstAttribute="top" secondItem="iRB-aT-8Rb" secondAttribute="bottom" constant="29" id="QF1-41-d8h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Qw9-lO-xXn" secondAttribute="trailing" constant="305" id="PZb-sz-IB8"/>
                             <constraint firstItem="Qw9-lO-xXn" firstAttribute="top" secondItem="Pcs-t1-wqr" secondAttribute="bottom" constant="8" id="QeE-lP-Tbl"/>
                             <constraint firstItem="XJ9-HQ-aH8" firstAttribute="leading" secondItem="0PJ-hk-twm" secondAttribute="trailing" constant="1" id="RZ8-aP-g0B"/>
                             <constraint firstItem="fWm-4D-Ivk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="Zt2-iB-vc3"/>
                             <constraint firstItem="XJ9-HQ-aH8" firstAttribute="centerY" secondItem="0PJ-hk-twm" secondAttribute="centerY" id="dIO-RU-oJG"/>
-                            <constraint firstItem="fWm-4D-Ivk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f8q-BE-JaZ"/>
                             <constraint firstItem="0PJ-hk-twm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jBv-3c-bnK"/>
                             <constraint firstItem="iRB-aT-8Rb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mNf-hd-fWI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XJ9-HQ-aH8" secondAttribute="trailing" constant="16" id="oLM-pW-qWe"/>
@@ -92,8 +99,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="kEs-0q-kvH"/>
                     <connections>
-                        <outlet property="checkingAccountBalance" destination="XJ9-HQ-aH8" id="i7n-Wa-4hi"/>
-                        <outlet property="savingsAccountBalance" destination="ueS-lN-xEX" id="36A-QL-jqN"/>
+                        <outlet property="checkingAccountBalanceLabel" destination="XJ9-HQ-aH8" id="4TD-xR-gtY"/>
+                        <outlet property="savingsAccountBalanceLabel" destination="ueS-lN-xEX" id="bT6-s5-7hA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -155,7 +162,7 @@
                                 <color key="backgroundColor" red="0.067481808364391327" green="0.96407788991928101" blue="0.018493182957172394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="Mpn-Zy-gh4"/>
-                                    <constraint firstAttribute="width" constant="130" id="nVN-JS-nV2"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="nVN-JS-nV2"/>
                                 </constraints>
                                 <state key="normal" title="Update Balance"/>
                                 <connections>
@@ -168,7 +175,6 @@
                             <constraint firstItem="flw-mp-ZZS" firstAttribute="top" secondItem="HjJ-xr-nuA" secondAttribute="bottom" constant="103" id="0Qo-PT-mD4"/>
                             <constraint firstItem="uev-R4-TiR" firstAttribute="leading" secondItem="h5J-KT-YeD" secondAttribute="leading" constant="16" id="5OH-v0-bse"/>
                             <constraint firstItem="rZV-CQ-Z8S" firstAttribute="centerY" secondItem="flw-mp-ZZS" secondAttribute="centerY" id="6DL-qa-GBb"/>
-                            <constraint firstItem="uev-R4-TiR" firstAttribute="centerX" secondItem="TWZ-Kq-sKq" secondAttribute="centerX" id="6JZ-Gx-3Ip"/>
                             <constraint firstItem="yOq-iB-bnf" firstAttribute="top" secondItem="uev-R4-TiR" secondAttribute="bottom" constant="35.5" id="6QN-Dy-ED2"/>
                             <constraint firstItem="hbr-tx-DWR" firstAttribute="top" secondItem="rZV-CQ-Z8S" secondAttribute="bottom" constant="97" id="FVJ-LN-CXm"/>
                             <constraint firstItem="akF-nS-Vsi" firstAttribute="leading" secondItem="h5J-KT-YeD" secondAttribute="leading" constant="16" id="IyZ-OK-8R4"/>
@@ -193,9 +199,9 @@
                         <viewLayoutGuide key="safeArea" id="h5J-KT-YeD"/>
                     </view>
                     <connections>
-                        <outlet property="checkingBalance" destination="hbr-tx-DWR" id="dg6-vg-6e6"/>
-                        <outlet property="depositAmount" destination="rZV-CQ-Z8S" id="KeA-5g-oQx"/>
-                        <outlet property="withdrawAmount" destination="yOq-iB-bnf" id="RZ0-b9-YT1"/>
+                        <outlet property="checkingBalanceLabel" destination="hbr-tx-DWR" id="syk-Ef-Pot"/>
+                        <outlet property="depositAmountTextField" destination="rZV-CQ-Z8S" id="tdQ-or-j1Q"/>
+                        <outlet property="withdrawAmountTextField" destination="yOq-iB-bnf" id="XxU-Z5-jLn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CI6-zW-F0y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -257,7 +263,7 @@
                                 <color key="backgroundColor" red="0.067481808364391327" green="0.96407788991928101" blue="0.018493182957172394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="dwL-R8-Rj6"/>
-                                    <constraint firstAttribute="width" constant="130" id="g0S-eJ-qRG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="g0S-eJ-qRG"/>
                                 </constraints>
                                 <state key="normal" title="Update Balance"/>
                                 <connections>
@@ -275,7 +281,6 @@
                             <constraint firstItem="HoU-5S-bWG" firstAttribute="top" secondItem="Qv7-vf-QGX" secondAttribute="bottom" constant="91" id="Pxy-BG-2eL"/>
                             <constraint firstItem="F6e-Jc-mWQ" firstAttribute="top" secondItem="VaB-gA-ECu" secondAttribute="bottom" constant="100" id="QF3-SD-ByN"/>
                             <constraint firstItem="VaB-gA-ECu" firstAttribute="top" secondItem="dlL-hQ-3U0" secondAttribute="top" constant="85.5" id="RPr-fp-fBX"/>
-                            <constraint firstItem="Vpa-Td-wWt" firstAttribute="centerX" secondItem="nYm-Gc-gOk" secondAttribute="centerX" id="TaU-F5-puH"/>
                             <constraint firstItem="ff8-tb-Xsc" firstAttribute="leading" secondItem="dlL-hQ-3U0" secondAttribute="leading" constant="16" id="Ud9-t1-FLM"/>
                             <constraint firstItem="Vpa-Td-wWt" firstAttribute="top" secondItem="dlL-hQ-3U0" secondAttribute="top" constant="26" id="b6u-A0-46P"/>
                             <constraint firstItem="dlL-hQ-3U0" firstAttribute="trailing" secondItem="Vpa-Td-wWt" secondAttribute="trailing" constant="16" id="b80-np-gpD"/>
@@ -295,9 +300,9 @@
                         <viewLayoutGuide key="safeArea" id="dlL-hQ-3U0"/>
                     </view>
                     <connections>
-                        <outlet property="depositAmount" destination="HoU-5S-bWG" id="1tQ-2I-D7U"/>
-                        <outlet property="savingsBalance" destination="nj4-UO-LrB" id="U4r-LG-h8Q"/>
-                        <outlet property="withdrawAmount" destination="Qv7-vf-QGX" id="IcN-vU-u3f"/>
+                        <outlet property="depositAmountTextField" destination="HoU-5S-bWG" id="DdM-9o-htz"/>
+                        <outlet property="savingsBalanceLabel" destination="nj4-UO-LrB" id="H9v-Ae-aCe"/>
+                        <outlet property="withdrawAmountTextField" destination="Qv7-vf-QGX" id="nLI-v3-7FA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZt-7r-dyb" userLabel="First Responder" sceneMemberID="firstResponder"/>

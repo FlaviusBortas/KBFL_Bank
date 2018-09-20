@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		06512611214FF488007B9F1B /* AccountProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06512610214FF488007B9F1B /* AccountProtocol.swift */; };
 		0651261521502CE9007B9F1B /* Savings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0651261421502CE9007B9F1B /* Savings.swift */; };
+		8B6C790121531DA2007215DA /* AccountDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6C790021531DA2007215DA /* AccountDatabase.swift */; };
 		8BB59F21214FE2FC00391C3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB59F20214FE2FC00391C3D /* AppDelegate.swift */; };
 		8BB59F23214FE2FC00391C3D /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB59F22214FE2FC00391C3D /* TitleViewController.swift */; };
 		8BB59F26214FE2FC00391C3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB59F24214FE2FC00391C3D /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		06512610214FF488007B9F1B /* AccountProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProtocol.swift; sourceTree = "<group>"; };
 		0651261421502CE9007B9F1B /* Savings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Savings.swift; sourceTree = "<group>"; };
+		8B6C790021531DA2007215DA /* AccountDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDatabase.swift; sourceTree = "<group>"; };
 		8BB59F1D214FE2FC00391C3D /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB59F20214FE2FC00391C3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BB59F22214FE2FC00391C3D /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				8BB59F502150044600391C3D /* Checking.swift */,
 				06512610214FF488007B9F1B /* AccountProtocol.swift */,
 				0651261421502CE9007B9F1B /* Savings.swift */,
+				8B6C790021531DA2007215DA /* AccountDatabase.swift */,
 			);
 			path = ModelLayer;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 			files = (
 				EB174C5121501EFB00F44593 /* SavingsViewController.swift in Sources */,
 				0651261521502CE9007B9F1B /* Savings.swift in Sources */,
+				8B6C790121531DA2007215DA /* AccountDatabase.swift in Sources */,
 				8BB59F23214FE2FC00391C3D /* TitleViewController.swift in Sources */,
 				8BB59F512150044600391C3D /* Checking.swift in Sources */,
 				06512611214FF488007B9F1B /* AccountProtocol.swift in Sources */,

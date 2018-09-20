@@ -8,53 +8,12 @@
 
 import Foundation
 
-class Savings {
-    var savingsBalance: Double
-    var savingsWithdrawal: Double
-    var savingsDeposit: Double
+class Savings: Account {
+    var balance: Double
+    let type: AccountType
     
-    init(savingsBalance: Double, savingsWithdrawal: Double, savingsDeposit: Double) {
-        self.savingsBalance = savingsBalance
-        self.savingsWithdrawal = savingsWithdrawal
-        self.savingsDeposit = savingsDeposit
+    init(balance: Double, type: AccountType) {
+        self.balance = balance
+        self.type = type
     }
-}
-extension Savings: Account {
-    var currentBalance: Double {
-        get {
-            return savingsBalance
-        }
-        set {
-            savingsBalance = newValue
-        }
-    }
-    
-    var withdrawal: Double {
-        get {
-            return savingsWithdrawal
-        }
-        set {
-            savingsWithdrawal = newValue
-        }
-    }
-    
-    var deposit: Double {
-        get {
-            return savingsDeposit
-        }
-        set {
-            savingsDeposit = newValue
-        }
-    }
-    
-    func totalBalance(withdrawing withdrawal: Double, depositing deposit: Double) -> Double {
-        let transaction = deposit - withdrawal
-        return currentBalance + transaction
-    }
-    
-    
-}
-
-struct SavingsBalance {
-    var balance = 200.00
 }
