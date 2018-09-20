@@ -10,10 +10,6 @@ import UIKit
 
 //MARK: - Protocol Definition
 
-protocol SavingsViewControllerDelegate: class {
-    func savingsViewController(_ controller: SavingsViewController, didFinishEditing item: Savings)
-}
-
 class SavingsViewController: UIViewController {
     // MARK: - Outlets
     
@@ -23,7 +19,6 @@ class SavingsViewController: UIViewController {
     
     // MARK: - Properties
     
-    weak var delegate: SavingsViewControllerDelegate?
     var account: Savings?
     
     // MARK: - Lifecycle

@@ -10,10 +10,6 @@ import UIKit
 
 //MARK: - Protocol Definition
 
-protocol CheckingViewControllerDelegate: class {
-    func checkingViewController(_ controller: CheckingViewController, didFinishEditing item: Checking)
-}
-
 class CheckingViewController: UIViewController {
 
     @IBOutlet weak var withdrawAmountTextField: UITextField!
@@ -22,7 +18,6 @@ class CheckingViewController: UIViewController {
     
     // MARK: - Properties
     
-    weak var delegate: CheckingViewControllerDelegate?
     var account: Checking?
 
     // MARK: - Lifecycle

@@ -45,6 +45,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qw9-lO-xXn">
                                 <rect key="frame" x="16" y="273" width="54" height="30"/>
                                 <color key="backgroundColor" red="0.067481808364391327" green="0.96407788991928101" blue="0.018493182957172394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="jlv-Ce-Unl"/>
+                                </constraints>
                                 <state key="normal" title="Savings"/>
                                 <connections>
                                     <action selector="savingsInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8yB-Ht-qn0"/>
@@ -60,6 +63,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iRB-aT-8Rb">
                                 <rect key="frame" x="16" y="185" width="65" height="30"/>
                                 <color key="backgroundColor" red="0.067481808364391327" green="0.96407788991928101" blue="0.018493182957172394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="65" id="CIK-kc-VzG"/>
+                                </constraints>
                                 <state key="normal" title="Checking"/>
                                 <connections>
                                     <action selector="checkingInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mII-vN-1KI"/>
@@ -73,12 +79,13 @@
                             <constraint firstItem="ueS-lN-xEX" firstAttribute="centerY" secondItem="Pcs-t1-wqr" secondAttribute="centerY" id="69m-eO-daK"/>
                             <constraint firstItem="Qw9-lO-xXn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7Fm-8P-voX"/>
                             <constraint firstItem="iRB-aT-8Rb" firstAttribute="top" secondItem="0PJ-hk-twm" secondAttribute="bottom" constant="8" id="9SO-dh-cf0"/>
+                            <constraint firstItem="Pcs-t1-wqr" firstAttribute="top" secondItem="iRB-aT-8Rb" secondAttribute="bottom" constant="29" id="BM8-bN-RnP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iRB-aT-8Rb" secondAttribute="trailing" constant="294" id="Fvu-8J-kz0"/>
                             <constraint firstItem="ueS-lN-xEX" firstAttribute="leading" secondItem="Pcs-t1-wqr" secondAttribute="trailing" constant="8" id="M7h-Il-JVI"/>
                             <constraint firstItem="fWm-4D-Ivk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PBv-s7-4MR"/>
-                            <constraint firstItem="Pcs-t1-wqr" firstAttribute="top" secondItem="iRB-aT-8Rb" secondAttribute="bottom" constant="29" id="QF1-41-d8h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Qw9-lO-xXn" secondAttribute="trailing" constant="305" id="PZb-sz-IB8"/>
                             <constraint firstItem="Qw9-lO-xXn" firstAttribute="top" secondItem="Pcs-t1-wqr" secondAttribute="bottom" constant="8" id="QeE-lP-Tbl"/>
                             <constraint firstItem="XJ9-HQ-aH8" firstAttribute="leading" secondItem="0PJ-hk-twm" secondAttribute="trailing" constant="1" id="RZ8-aP-g0B"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iRB-aT-8Rb" secondAttribute="trailing" constant="294" id="ZOg-2F-UUm"/>
                             <constraint firstItem="fWm-4D-Ivk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="Zt2-iB-vc3"/>
                             <constraint firstItem="XJ9-HQ-aH8" firstAttribute="centerY" secondItem="0PJ-hk-twm" secondAttribute="centerY" id="dIO-RU-oJG"/>
                             <constraint firstItem="0PJ-hk-twm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jBv-3c-bnK"/>
@@ -86,7 +93,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XJ9-HQ-aH8" secondAttribute="trailing" constant="16" id="oLM-pW-qWe"/>
                             <constraint firstItem="Pcs-t1-wqr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="raX-5l-Exd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fWm-4D-Ivk" secondAttribute="trailing" constant="16" id="saG-YA-lzb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qw9-lO-xXn" secondAttribute="trailing" constant="305" id="vxe-ic-XrG"/>
                             <constraint firstItem="0PJ-hk-twm" firstAttribute="top" secondItem="fWm-4D-Ivk" secondAttribute="bottom" constant="45" id="zS1-ev-QfG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

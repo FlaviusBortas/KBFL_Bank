@@ -72,7 +72,6 @@ class TitleViewController: UIViewController {
             }
             
             savingsVC.account = savingsAccount
-            savingsVC.delegate = self
             print("made it to savings")
             
         case "SegueToChecking":
@@ -82,20 +81,9 @@ class TitleViewController: UIViewController {
             }
 
             checkingVC.account = checkingAccount
-            checkingVC.delegate = self
             print("made it to checkings")
             
         default: return
         }
-    }
-}
-
-extension TitleViewController: SavingsViewControllerDelegate {
-    func savingsViewController(_ controller: SavingsViewController, didFinishEditing item: Savings) {
-    }
-}
-
-extension TitleViewController: CheckingViewControllerDelegate {
-    func checkingViewController(_ controller: CheckingViewController, didFinishEditing item: Checking) {
     }
 }
