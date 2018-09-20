@@ -9,46 +9,53 @@
 import UIKit
 
 class TitleViewController: UIViewController {
+    // MARK: - Outlets
+    
+    @IBOutlet weak var checkingAccountBalanceLabel: UILabel!
+    @IBOutlet weak var savingsAccountBalanceLabel: UILabel!
+    
+    // MARK: - Properties
 
-    //MARK: - Outlets
+    var checkingAccount: Checking?
+    var savingsAccount: Savings?
     
-    @IBOutlet weak var checkingAccountBalance: UILabel!
-    @IBOutlet weak var savingsAccountBalance: UILabel!
-    
-    //MARK: - Properties
-    
-    var checkingAccount = Checking(balance: 1000)
-    var savingsAccount = Savings(balance: 2000)
-    
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        populateBalances()
+        loadAccounts()
         populateLabels()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        populateBalances()
         populateLabels()
     }
     
-    //MARK: - Private Implementations
+    // MARK: - Private Implementations
     
-//    func populateBalances() {
-//        let checkingBalance = CheckingBalance()
-//        let savingsBalance = SavingsBalance()
-//
-//        currentCheckingBalance = checkingBalance.balance
-//        currentSavingsBalance = savingsBalance.balance
-//    }
-//
+    func loadAccounts() {
+        let storedAccounts = AccountDatabase.accounts
+        
+        if let checkingAmount = storedAccounts["Checking"] {
+            checkingAccount = Checking(balance: checkingAmount, type: .checking)
+        }
+        
+        if let savingsAmount = storedAccounts["Savings"] {
+            savingsAccount = Savings(balance: savingsAmount, type: .saving)
+        }
+    }
+    
     func populateLabels() {
-        checkingAccountBalance.text = String(format: "%0.02f", checkingAccount.balance)
-        savingsAccountBalance.text = String(format: "%0.02f", savingsAccount.balance)
+        if let checkings = checkingAccount {
+            checkingAccountBalanceLabel.text = checkings.formattedAmount
+        }
+        
+        if let savings = savingsAccount {
+            savingsAccountBalanceLabel.text = savings.formattedAmount
+        }
     }
 
-    //MARK: - Actions
+    // MARK: - Actions
 
     @IBAction func checkingInfoButton(_ sender: UIButton) {
     }
@@ -64,7 +71,7 @@ class TitleViewController: UIViewController {
                 return
             }
             
-            savingsVC.savingsAmount = savingsAccount
+            savingsVC.account = savingsAccount
             savingsVC.delegate = self
             print("made it to savings")
             
@@ -73,13 +80,12 @@ class TitleViewController: UIViewController {
                 print("Failed to cast segue destination as CheckingVC")
                 return
             }
-            
-            checkingVC.checkingsAmount = checkingAccount
+
+            checkingVC.account = checkingAccount
             checkingVC.delegate = self
             print("made it to checkings")
             
-        default:
-            return
+        default: return
         }
     }
 }
@@ -88,7 +94,6 @@ extension TitleViewController: SavingsViewControllerDelegate {
     func savingsViewController(_ controller: SavingsViewController, didFinishEditing item: Savings) {
     }
 }
-
 
 extension TitleViewController: CheckingViewControllerDelegate {
     func checkingViewController(_ controller: CheckingViewController, didFinishEditing item: Checking) {

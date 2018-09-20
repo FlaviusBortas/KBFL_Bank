@@ -8,64 +8,12 @@
 
 import Foundation
 
-class Checking {
+class Checking: Account {
     var balance: Double
-//    var checkingWithdrawal: Double
-//    var checkingDeposit: Double
+    let type: AccountType
     
-    init(balance: Double) {
+    init(balance: Double, type: AccountType) {
         self.balance = balance
-//        self.checkingWithdrawal = checkingWithdrawal
-//        self.checkingDeposit = checkingDeposit
+        self.type = type
     }
-    
-    func withdraw(withdrawAmount withdraw: Double) -> Double {
-        return abs(self.balance - withdraw)
-    }
-    
-    func deposit(depositAmount deposit: Double) -> Double {
-        return abs(self.balance + deposit)
-    }
-
-    
-}
-
-//extension Checking: Account {
-//    var currentBalance: Double {
-//        get {
-//            return checkingBalance
-//        }
-//        set {
-//            checkingBalance = newValue
-//        }
-//    }
-//
-//    var withdrawal: Double {
-//        get {
-//            return checkingWithdrawal
-//        }
-//        set {
-//            checkingWithdrawal = newValue
-//        }
-//    }
-//
-//    var deposit: Double {
-//        get {
-//            return checkingDeposit
-//        }
-//        set {
-//            checkingDeposit = newValue
-//        }
-//    }
-//
-//    func totalBalance(withdrawing withdrawal: Double, depositing deposit: Double) -> Double {
-//         let transaction = deposit - withdrawal
-//         return currentBalance + transaction
-//    }
-//
-//
-//}
-
-struct CheckingBalance {
-    var balance = 100.00
 }

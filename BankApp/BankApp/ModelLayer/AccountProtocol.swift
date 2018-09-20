@@ -8,13 +8,30 @@
 
 import Foundation
 
-protocol Account: class {
-    var currentBalance: Double { get set }
-    var withdrawal: Double { get set }
-    var deposit: Double { get set }
+enum AccountType: String {
+    case checking = "Checking"
+    case saving = "Saving"
+}
+
+protocol Account: AnyObject {
+    var balance: Double { get set }
+    var type: AccountType { get }
+    var formattedAmount: String { get }
+
+    func withdraw(amount: Double)
+    func deposit(amount: Double)
+}
+
+extension Account {
+    var formattedAmount: String {
+        return String(format: "$%0.02f", balance)
+    }
     
-    func totalBalance(withdrawing withdrawal: Double, depositing deposit: Double) -> Double
-        // var transaction = deposit - withdrawal
-        // return currentBalance + transactionn
-   
+    func withdraw(amount: Double) {
+        balance -= amount
+    }
+
+    func deposit(amount: Double) {
+        balance += amount
+    }
 }
