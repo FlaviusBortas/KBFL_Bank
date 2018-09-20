@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Checking: Account {
+class Checking: Account, Codable {
     var balance: Double
     let type: AccountType
     

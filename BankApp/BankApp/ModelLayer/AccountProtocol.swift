@@ -8,12 +8,12 @@
 
 import Foundation
 
-enum AccountType: String {
+enum AccountType: String, Codable {
     case checking = "Checking"
     case saving = "Saving"
 }
 
-protocol Account: AnyObject {
+protocol Account: AnyObject, Codable {
     var balance: Double { get set }
     var type: AccountType { get }
     var formattedAmount: String { get }
@@ -34,4 +34,5 @@ extension Account {
     func deposit(amount: Double) {
         balance += amount
     }
+    
 }

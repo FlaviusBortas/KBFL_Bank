@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-class Savings: Account {
+class Savings: Account, Codable {
     var balance: Double
     let type: AccountType
     

@@ -18,20 +18,44 @@ class TitleViewController: UIViewController {
 
     var checkingAccount: Checking?
     var savingsAccount: Savings?
+    var accounts: (checking: Checking, savings: Savings)?
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadSavingsAccountData()
+        loadCheckingAccountData()
         loadAccounts()
         populateLabels()
+ 
+        
+        /// Print message to see if these are run and what path to document directory actually is
+        print("Documents folder is \(documentsDirectory())\n")
+        print("Data file path is \(dataFilePath1()), \(dataFilePath2())")
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        saveSavingsAccountData()
+        saveCheckingAccountData()
         populateLabels()
+
     }
     
     // MARK: - Private Implementations
+    
+//    func loadAccountsTuple() {
+//
+//        guard let checkingAccount = checkingAccount else { return }
+//        guard let savingsAccount = savingsAccount else { return }
+//
+//        guard var tempCheckingAccount = accounts?.checking else { return }
+//        tempCheckingAccount = checkingAccount
+//
+//        guard var tempSavingsAccount = accounts?.savings else { return }
+//        tempSavingsAccount = savingsAccount
+//
+//    }
     
     func loadAccounts() {
         let storedAccounts = AccountDatabase.accounts
@@ -86,4 +110,72 @@ class TitleViewController: UIViewController {
         default: return
         }
     }
+}
+
+//MARK: - Data Persistance
+
+/// Helper functions in order to get document directory/filepaths
+
+extension TitleViewController {
+    
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath1() -> URL {
+        return documentsDirectory().appendingPathComponent("Accounts.plist")
+    }
+    
+    func dataFilePath2() -> URL {
+        return documentsDirectory().appendingPathComponent("Checking.plist")
+    }
+    
+    func saveSavingsAccountData() {
+        let encoder = PropertyListEncoder()
+        do {
+            let savingsData = try encoder.encode(savingsAccount)
+            try savingsData.write(to: dataFilePath1(), options: Data.WritingOptions.atomic)
+        } catch {
+            print("Error encoding SavingsAccount")
+        }
+    }
+    
+    func saveCheckingAccountData() {
+        let encoder = PropertyListEncoder()
+        do {
+            let checkingData = try encoder.encode(checkingAccount)
+            try checkingData.write(to: dataFilePath2(), options: Data.WritingOptions.atomic)
+        } catch {
+            print("Error encoding Checkings Account")
+        }
+    }
+
+    
+    func loadSavingsAccountData() {
+        let path = dataFilePath1()
+        if let saving = try? Data(contentsOf: path) {
+            let decoder = PropertyListDecoder()
+            do {
+                savingsAccount = try  decoder.decode(Savings?.self, from: saving)
+            } catch {
+                print("Error decoding item array")
+            }
+            
+        }
+    }
+    
+    func loadCheckingAccountData() {
+        let path = dataFilePath2()
+        if let checking = try? Data(contentsOf: path) {
+            let decoder = PropertyListDecoder()
+            do {
+                checkingAccount = try decoder.decode(Checking?.self, from: checking)
+            } catch {
+                print("Error decoding item array")
+            }
+            
+        }
+    }
+    
 }
