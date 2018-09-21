@@ -108,7 +108,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kEs-0q-kvH"/>
+                    <navigationItem key="navigationItem" title="Accounts" id="kEs-0q-kvH"/>
                     <connections>
                         <outlet property="checkingAccountBalanceLabel" destination="XJ9-HQ-aH8" id="4TD-xR-gtY"/>
                         <outlet property="savingsAccountBalanceLabel" destination="ueS-lN-xEX" id="bT6-s5-7hA"/>
@@ -118,7 +118,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--Checking View Controller-->
+        <!--Checking-->
         <scene sceneID="Qpr-oU-fYk">
             <objects>
                 <viewController id="Up7-iH-df2" customClass="CheckingViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,6 +211,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h5J-KT-YeD"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Checking" id="f28-Cv-LIn"/>
                     <connections>
                         <outlet property="checkingBalanceLabel" destination="hbr-tx-DWR" id="syk-Ef-Pot"/>
                         <outlet property="depositAmountTextField" destination="rZV-CQ-Z8S" id="tdQ-or-j1Q"/>
@@ -221,7 +222,7 @@
             </objects>
             <point key="canvasLocation" x="1889" y="490"/>
         </scene>
-        <!--Savings View Controller-->
+        <!--Savings-->
         <scene sceneID="7sT-Ma-ZyA">
             <objects>
                 <viewController id="3Uv-yR-ISX" customClass="SavingsViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -314,6 +315,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dlL-hQ-3U0"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Savings" id="EA9-gG-W3E"/>
                     <connections>
                         <outlet property="depositAmountTextField" destination="HoU-5S-bWG" id="DdM-9o-htz"/>
                         <outlet property="savingsBalanceLabel" destination="nj4-UO-LrB" id="H9v-Ae-aCe"/>
