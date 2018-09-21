@@ -40,6 +40,17 @@ class CheckingViewController: UIViewController {
         
         if let withdrawAmount = withdrawAmountTextField.text, let amount = Double(withdrawAmount) {
             account.withdraw(amount: amount)
+            
+            if account.balance < 0 {
+                let overdraftAlert = UIAlertController(title: "Overdraft", message: "You overdrafted your account.  Please deposit funds.", preferredStyle: .alert)
+                
+                overdraftAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                //overdraftAlert.addAction(UIAlertAction(title: "Bad", style: .cancel, handler: nil))
+                present(overdraftAlert, animated: true)
+                account.overdraft()
+            }
+            
         }
         
         if let depositAmount = depositAmountTextField.text, let amount = Double(depositAmount) {
