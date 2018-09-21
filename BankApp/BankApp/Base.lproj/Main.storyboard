@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accounts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWm-4D-Ivk">
-                                <rect key="frame" x="16" y="90" width="343" height="36"/>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="35"/>
-                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checking Balance: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PJ-hk-twm">
                                 <rect key="frame" x="16" y="171" width="147" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -85,30 +79,27 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ueS-lN-xEX" secondAttribute="trailing" constant="16" id="4nh-Xy-La1"/>
                             <constraint firstItem="ueS-lN-xEX" firstAttribute="centerY" secondItem="Pcs-t1-wqr" secondAttribute="centerY" id="69m-eO-daK"/>
                             <constraint firstItem="Qw9-lO-xXn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7Fm-8P-voX"/>
+                            <constraint firstItem="0PJ-hk-twm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="107" id="98x-XF-eXF"/>
                             <constraint firstItem="iRB-aT-8Rb" firstAttribute="top" secondItem="0PJ-hk-twm" secondAttribute="bottom" constant="8" id="9SO-dh-cf0"/>
                             <constraint firstItem="Pcs-t1-wqr" firstAttribute="top" secondItem="iRB-aT-8Rb" secondAttribute="bottom" constant="29" id="BM8-bN-RnP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iRB-aT-8Rb" secondAttribute="trailing" constant="294" id="Fvu-8J-kz0"/>
                             <constraint firstItem="ueS-lN-xEX" firstAttribute="leading" secondItem="Pcs-t1-wqr" secondAttribute="trailing" constant="8" id="M7h-Il-JVI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S2A-3s-zW7" secondAttribute="trailing" constant="106" id="NnY-ay-wzb"/>
-                            <constraint firstItem="fWm-4D-Ivk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PBv-s7-4MR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Qw9-lO-xXn" secondAttribute="trailing" constant="305" id="PZb-sz-IB8"/>
                             <constraint firstItem="S2A-3s-zW7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="376" id="QS3-yj-KNQ"/>
                             <constraint firstItem="Qw9-lO-xXn" firstAttribute="top" secondItem="Pcs-t1-wqr" secondAttribute="bottom" constant="8" id="QeE-lP-Tbl"/>
                             <constraint firstItem="XJ9-HQ-aH8" firstAttribute="leading" secondItem="0PJ-hk-twm" secondAttribute="trailing" constant="1" id="RZ8-aP-g0B"/>
                             <constraint firstItem="S2A-3s-zW7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="UHE-9D-f9L"/>
-                            <constraint firstItem="fWm-4D-Ivk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="Zt2-iB-vc3"/>
                             <constraint firstItem="XJ9-HQ-aH8" firstAttribute="centerY" secondItem="0PJ-hk-twm" secondAttribute="centerY" id="dIO-RU-oJG"/>
                             <constraint firstItem="0PJ-hk-twm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jBv-3c-bnK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="S2A-3s-zW7" secondAttribute="bottom" constant="76" id="kxx-hm-VEa"/>
                             <constraint firstItem="iRB-aT-8Rb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mNf-hd-fWI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XJ9-HQ-aH8" secondAttribute="trailing" constant="16" id="oLM-pW-qWe"/>
                             <constraint firstItem="Pcs-t1-wqr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="raX-5l-Exd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fWm-4D-Ivk" secondAttribute="trailing" constant="16" id="saG-YA-lzb"/>
-                            <constraint firstItem="0PJ-hk-twm" firstAttribute="top" secondItem="fWm-4D-Ivk" secondAttribute="bottom" constant="45" id="zS1-ev-QfG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kEs-0q-kvH"/>
+                    <navigationItem key="navigationItem" title="Accounts" id="kEs-0q-kvH"/>
                     <connections>
                         <outlet property="checkingAccountBalanceLabel" destination="XJ9-HQ-aH8" id="4TD-xR-gtY"/>
                         <outlet property="savingsAccountBalanceLabel" destination="ueS-lN-xEX" id="bT6-s5-7hA"/>
@@ -118,7 +109,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--Checking View Controller-->
+        <!--Checking-->
         <scene sceneID="Qpr-oU-fYk">
             <objects>
                 <viewController id="Up7-iH-df2" customClass="CheckingViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -156,12 +147,6 @@
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHECKING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uev-R4-TiR">
-                                <rect key="frame" x="16" y="90" width="343" height="36"/>
-                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="35"/>
-                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOq-iB-bnf">
                                 <rect key="frame" x="101.5" y="161.5" width="123.5" height="30"/>
                                 <nil key="textColor"/>
@@ -186,9 +171,7 @@
                         <color key="backgroundColor" red="0.23137254901960785" green="0.36862745098039218" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="flw-mp-ZZS" firstAttribute="top" secondItem="HjJ-xr-nuA" secondAttribute="bottom" constant="103" id="0Qo-PT-mD4"/>
-                            <constraint firstItem="uev-R4-TiR" firstAttribute="leading" secondItem="h5J-KT-YeD" secondAttribute="leading" constant="16" id="5OH-v0-bse"/>
                             <constraint firstItem="rZV-CQ-Z8S" firstAttribute="centerY" secondItem="flw-mp-ZZS" secondAttribute="centerY" id="6DL-qa-GBb"/>
-                            <constraint firstItem="yOq-iB-bnf" firstAttribute="top" secondItem="uev-R4-TiR" secondAttribute="bottom" constant="35.5" id="6QN-Dy-ED2"/>
                             <constraint firstItem="akF-nS-Vsi" firstAttribute="leading" secondItem="h5J-KT-YeD" secondAttribute="leading" constant="16" id="IyZ-OK-8R4"/>
                             <constraint firstItem="flw-mp-ZZS" firstAttribute="leading" secondItem="h5J-KT-YeD" secondAttribute="leading" constant="16" id="JK6-z1-4b4"/>
                             <constraint firstItem="HjJ-xr-nuA" firstAttribute="leading" secondItem="h5J-KT-YeD" secondAttribute="leading" constant="16" id="KOC-9l-kp6"/>
@@ -202,15 +185,14 @@
                             <constraint firstItem="rZV-CQ-Z8S" firstAttribute="leading" secondItem="flw-mp-ZZS" secondAttribute="trailing" constant="21" id="fD6-DD-T8z"/>
                             <constraint firstItem="rZV-CQ-Z8S" firstAttribute="top" secondItem="yOq-iB-bnf" secondAttribute="bottom" constant="111" id="k3p-KG-iOn"/>
                             <constraint firstItem="qHC-N5-mdQ" firstAttribute="top" secondItem="hbr-tx-DWR" secondAttribute="bottom" constant="41" id="lzM-Vz-a4p"/>
-                            <constraint firstItem="uev-R4-TiR" firstAttribute="top" secondItem="h5J-KT-YeD" secondAttribute="top" constant="26" id="mtR-2e-aOF"/>
                             <constraint firstItem="akF-nS-Vsi" firstAttribute="top" secondItem="flw-mp-ZZS" secondAttribute="bottom" constant="99" id="p4N-ig-X2g"/>
-                            <constraint firstItem="h5J-KT-YeD" firstAttribute="trailing" secondItem="uev-R4-TiR" secondAttribute="trailing" constant="16" id="rFA-nD-Hhu"/>
                             <constraint firstItem="hbr-tx-DWR" firstAttribute="centerY" secondItem="akF-nS-Vsi" secondAttribute="centerY" id="wxu-XO-sQj"/>
                             <constraint firstItem="yOq-iB-bnf" firstAttribute="leading" secondItem="HjJ-xr-nuA" secondAttribute="trailing" constant="8" id="ypx-Gl-39J"/>
                             <constraint firstItem="h5J-KT-YeD" firstAttribute="trailing" secondItem="hbr-tx-DWR" secondAttribute="trailing" constant="16" id="zro-6h-A0q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h5J-KT-YeD"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Checking" id="f28-Cv-LIn"/>
                     <connections>
                         <outlet property="checkingBalanceLabel" destination="hbr-tx-DWR" id="syk-Ef-Pot"/>
                         <outlet property="depositAmountTextField" destination="rZV-CQ-Z8S" id="tdQ-or-j1Q"/>
@@ -221,7 +203,7 @@
             </objects>
             <point key="canvasLocation" x="1889" y="490"/>
         </scene>
-        <!--Savings View Controller-->
+        <!--Savings-->
         <scene sceneID="7sT-Ma-ZyA">
             <objects>
                 <viewController id="3Uv-yR-ISX" customClass="SavingsViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -265,12 +247,6 @@
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAVINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpa-Td-wWt">
-                                <rect key="frame" x="16" y="90" width="343" height="35.5"/>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="35"/>
-                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Opl-My-dyo">
                                 <rect key="frame" x="122.5" y="488" width="130" height="65"/>
                                 <color key="backgroundColor" red="0.77879840135574341" green="0.81712275743484497" blue="0.064461395144462585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -295,10 +271,7 @@
                             <constraint firstItem="F6e-Jc-mWQ" firstAttribute="top" secondItem="VaB-gA-ECu" secondAttribute="bottom" constant="100" id="QF3-SD-ByN"/>
                             <constraint firstItem="VaB-gA-ECu" firstAttribute="top" secondItem="dlL-hQ-3U0" secondAttribute="top" constant="85.5" id="RPr-fp-fBX"/>
                             <constraint firstItem="ff8-tb-Xsc" firstAttribute="leading" secondItem="dlL-hQ-3U0" secondAttribute="leading" constant="16" id="Ud9-t1-FLM"/>
-                            <constraint firstItem="Vpa-Td-wWt" firstAttribute="top" secondItem="dlL-hQ-3U0" secondAttribute="top" constant="26" id="b6u-A0-46P"/>
-                            <constraint firstItem="dlL-hQ-3U0" firstAttribute="trailing" secondItem="Vpa-Td-wWt" secondAttribute="trailing" constant="16" id="b80-np-gpD"/>
                             <constraint firstItem="HoU-5S-bWG" firstAttribute="top" secondItem="Qv7-vf-QGX" secondAttribute="bottom" constant="107" id="c2g-u7-1l6"/>
-                            <constraint firstItem="Qv7-vf-QGX" firstAttribute="top" secondItem="Vpa-Td-wWt" secondAttribute="bottom" constant="35.5" id="eOl-VQ-g2b"/>
                             <constraint firstItem="F6e-Jc-mWQ" firstAttribute="leading" secondItem="dlL-hQ-3U0" secondAttribute="leading" constant="16" id="jPV-bW-KON"/>
                             <constraint firstItem="ff8-tb-Xsc" firstAttribute="top" secondItem="F6e-Jc-mWQ" secondAttribute="bottom" constant="103" id="mDp-qU-r2W"/>
                             <constraint firstItem="nj4-UO-LrB" firstAttribute="centerY" secondItem="ff8-tb-Xsc" secondAttribute="centerY" id="msP-ex-qvH"/>
@@ -308,12 +281,12 @@
                             <constraint firstItem="Qv7-vf-QGX" firstAttribute="leading" secondItem="VaB-gA-ECu" secondAttribute="trailing" constant="8" id="pWS-ni-Afm"/>
                             <constraint firstItem="HoU-5S-bWG" firstAttribute="leading" secondItem="F6e-Jc-mWQ" secondAttribute="trailing" constant="21" id="pf1-ca-5Md"/>
                             <constraint firstItem="Opl-My-dyo" firstAttribute="centerX" secondItem="nYm-Gc-gOk" secondAttribute="centerX" id="qBA-D6-bGj"/>
-                            <constraint firstItem="Vpa-Td-wWt" firstAttribute="leading" secondItem="dlL-hQ-3U0" secondAttribute="leading" constant="16" id="qYu-Fc-NRN"/>
                             <constraint firstItem="dlL-hQ-3U0" firstAttribute="trailing" secondItem="nj4-UO-LrB" secondAttribute="trailing" constant="16" id="tEF-5J-fNA"/>
                             <constraint firstItem="HoU-5S-bWG" firstAttribute="centerY" secondItem="F6e-Jc-mWQ" secondAttribute="centerY" id="zia-9Q-nLr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dlL-hQ-3U0"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Savings" id="EA9-gG-W3E"/>
                     <connections>
                         <outlet property="depositAmountTextField" destination="HoU-5S-bWG" id="DdM-9o-htz"/>
                         <outlet property="savingsBalanceLabel" destination="nj4-UO-LrB" id="H9v-Ae-aCe"/>

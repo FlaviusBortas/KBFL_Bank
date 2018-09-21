@@ -23,8 +23,11 @@ class TitleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBarBackgroundColor()
+        setTitleTextColor()
         loadAccounts()
         populateLabels()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +57,16 @@ class TitleViewController: UIViewController {
             savingsAccountBalanceLabel.text = savings.formattedAmount
         }
     }
+    
+    
+    func setTitleTextColor() {
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "Copperplate", size: 35)!]
+    }
+    
+    func setNavBarBackgroundColor() {
+        navigationController?.navigationBar.backgroundColor = UIColor.blue
+    }
+    
 
     // MARK: - Actions
 

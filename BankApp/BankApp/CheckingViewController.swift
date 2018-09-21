@@ -24,6 +24,8 @@ class CheckingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBarBackgroundColor()
+        setTitleTextColor()
         updateUI()
     }
 
@@ -45,6 +47,14 @@ class CheckingViewController: UIViewController {
         if let depositAmount = depositAmountTextField.text, let amount = Double(depositAmount) {
             account.deposit(amount: amount)
         }
+    }
+    
+    func setNavBarBackgroundColor() {
+        navigationController?.navigationBar.backgroundColor = UIColor.blue
+    }
+    
+    func setTitleTextColor() {
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "Copperplate", size: 35)!]
     }
     
     // MARK: - Actions
