@@ -34,7 +34,7 @@ class TitleViewController: UIViewController {
     // MARK: - Private Implementations
     
     func loadAccounts() {
-        let storedAccounts = AccountDatabase.accounts
+        let storedAccounts = AccountDatabase.shared.accounts
         
         if let checkingAmount = storedAccounts["Checking"] {
             checkingAccount = Checking(balance: checkingAmount, type: .checking)
