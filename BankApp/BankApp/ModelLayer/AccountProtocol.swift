@@ -38,4 +38,8 @@ extension Account {
         
     }
     
+    func overdraft() {
+        balance -= 35.00
+    }
+    
 }
